@@ -57,7 +57,7 @@ object Utils {
     fun transliteration(value: String, divider: String = " ") : String {
         return value.split(' ').joinToString(divider) { word ->
             word.map { char ->
-                translit[char] ?: translit[char.toLowerCase()]?.toUpperCase() ?: char
+                translit[char] ?: translit[char.toLowerCase()]?.capitalize() ?: char
             }.joinToString("")
         }
     }
